@@ -574,6 +574,10 @@ void quantum_task(void) {
 #ifdef AUTO_SHIFT_ENABLE
     autoshift_matrix_scan();
 #endif
+
+#ifdef SECURE_ENABLE
+    secure_task();
+#endif
 }
 
 /** \brief Keyboard task: Do keyboard routine jobs
