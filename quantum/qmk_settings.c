@@ -255,6 +255,10 @@ int qmk_settings_set(uint16_t qsid, const void *setting, size_t maxsz) {
 }
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    vial_tap_dance_entry_t td;
+    if (dynamic_keymap_get_tap_dance(TD_INDEX(keycode), &td) == 0)
+        return td.custom_tapping_term;
+
     return QS.tapping_term;
 }
 
