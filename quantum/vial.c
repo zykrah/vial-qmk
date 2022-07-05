@@ -478,14 +478,10 @@ qk_tap_dance_action_t tap_dance_actions[VIAL_TAP_DANCE_ENTRIES] = { };
 /* Load timings from eeprom into custom_tapping_term */
 static void reload_tap_dance(void) {
     for (size_t i = 0; i < VIAL_TAP_DANCE_ENTRIES; ++i) {
-        vial_tap_dance_entry_t td;
         tap_dance_actions[i].fn.on_each_tap = on_dance;
         tap_dance_actions[i].fn.on_dance_finished = on_dance_finished;
         tap_dance_actions[i].fn.on_reset = on_dance_reset;
         tap_dance_actions[i].user_data = (void*)i;
-        if (dynamic_keymap_get_tap_dance(i, &td) == 0) {
-            tap_dance_actions[i].custom_tapping_term = td.custom_tapping_term;
-        }
     }
 }
 #endif
