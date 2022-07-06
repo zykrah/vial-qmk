@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
 Copyright 2021 cyril279
+=======
+Copyright 2021 @cyril279
+>>>>>>> 38ca5e95e1 (Adding Rev41lp keyboard (#15895))
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -25,12 +29,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    cyril279
 #define PRODUCT         rev41lp
+<<<<<<< HEAD
 #define DESCRIPTION     A 41-key keyboard
+=======
+>>>>>>> 38ca5e95e1 (Adding Rev41lp keyboard (#15895))
 
 /* key matrix size */
 #define MATRIX_ROWS 7
 #define MATRIX_COLS 6
 
+<<<<<<< HEAD
 /*
  * Keyboard Matrix Assignments
  *
@@ -41,10 +49,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
 */
+=======
+>>>>>>> 38ca5e95e1 (Adding Rev41lp keyboard (#15895))
 #define MATRIX_ROW_PINS { F4, B2, F5, B3, F6, B1, F7 }
 #define MATRIX_COL_PINS { D4, C6, D7, E6, B4, B5 }
 #define UNUSED_PINS
 
+<<<<<<< HEAD
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
 
@@ -52,11 +63,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BACKLIGHT_ON_STATE 1
 #define BACKLIGHT_BREATHING
 /* number of backlight levels */
+=======
+#define DIODE_DIRECTION COL2ROW
+
+#define BACKLIGHT_PIN B6
+#define BACKLIGHT_ON_STATE 1
+>>>>>>> 38ca5e95e1 (Adding Rev41lp keyboard (#15895))
 #define BACKLIGHT_LEVELS 7
 #define BACKLIGHT_LIMIT_VAL 150
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
+<<<<<<< HEAD
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
@@ -186,3 +204,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Bootmagic Lite key configuration */
 // #define BOOTMAGIC_LITE_ROW 0
 // #define BOOTMAGIC_LITE_COLUMN 0
+=======
+>>>>>>> 38ca5e95e1 (Adding Rev41lp keyboard (#15895))

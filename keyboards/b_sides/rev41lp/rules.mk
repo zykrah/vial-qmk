@@ -2,6 +2,7 @@
 MCU = atmega32u4
 
 # Bootloader selection
+<<<<<<< HEAD
 #   Teensy       halfkay
 #   Pro Micro    caterina
 #   Atmel DFU    atmel-dfu
@@ -10,10 +11,14 @@ MCU = atmega32u4
 #   ATmega32A    bootloadHID
 #   ATmega328P   USBasp
 BOOTLOADER = qmk-dfu 
+=======
+BOOTLOADER = caterina
+>>>>>>> 38ca5e95e1 (Adding Rev41lp keyboard (#15895))
 
 # Build Options
 #   change yes to no to disable
 #
+<<<<<<< HEAD
 BOOTMAGIC_ENABLE = no      # Virtual DIP switch configuration
 MOUSEKEY_ENABLE = no       # Mouse keys
 EXTRAKEY_ENABLE = yes      # Audio control and System control
@@ -31,3 +36,14 @@ BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
 AUDIO_ENABLE = no           # Audio output on port C6
 FAUXCLICKY_ENABLE = no      # Use buzzer to emulate clicky switches
 HD44780_ENABLE = no 		# Enable support for HD44780 based LCDs
+=======
+BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
+MOUSEKEY_ENABLE = no        # Mouse keys
+EXTRAKEY_ENABLE = yes       # Audio control and System control
+CONSOLE_ENABLE = yes        # Console for debug
+COMMAND_ENABLE = yes        # Commands for debug and configuration
+NKRO_ENABLE = no            # Enable N-Key Rollover
+BACKLIGHT_ENABLE = yes      # Enable keyboard backlight functionality
+RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
+AUDIO_ENABLE = no           # Audio output
+>>>>>>> 38ca5e95e1 (Adding Rev41lp keyboard (#15895))
