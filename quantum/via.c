@@ -340,22 +340,16 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
 #if defined(VIA_QMK_RGBLIGHT_ENABLE)
             via_qmk_rgblight_set_value(command_data);
 #endif
-<<<<<<< HEAD
 #if defined(VIALRGB_ENABLE)
             vialrgb_set_value(data, length);
-=======
+#endif
 #if defined(VIA_QMK_RGB_MATRIX_ENABLE)
             via_qmk_rgb_matrix_set_value(command_data);
->>>>>>> 9056775e20 (Add hacky via support for RGB Matrix (#16086))
 #endif
 #if defined(VIA_CUSTOM_LIGHTING_ENABLE)
             raw_hid_receive_kb(data, length);
 #endif
-<<<<<<< HEAD
-#if !defined(VIA_QMK_BACKLIGHT_ENABLE) && !defined(VIA_QMK_RGBLIGHT_ENABLE) && !defined(VIALRGB_ENABLE) && !defined(VIA_CUSTOM_LIGHTING_ENABLE)
-=======
-#if !defined(VIA_QMK_BACKLIGHT_ENABLE) && !defined(VIA_QMK_RGBLIGHT_ENABLE) && !defined(VIA_CUSTOM_LIGHTING_ENABLE) && !defined(VIA_QMK_RGB_MATRIX_ENABLE)
->>>>>>> 9056775e20 (Add hacky via support for RGB Matrix (#16086))
+#if !defined(VIA_QMK_BACKLIGHT_ENABLE) && !defined(VIA_QMK_RGBLIGHT_ENABLE) && !defined(VIA_CUSTOM_LIGHTING_ENABLE) && !defined(VIA_QMK_RGB_MATRIX_ENABLE) && !defined(VIALRGB_ENABLE) 
             // Return the unhandled state
             *command_id = id_unhandled;
 #endif
@@ -368,22 +362,16 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
 #if defined(VIA_QMK_RGBLIGHT_ENABLE)
             via_qmk_rgblight_get_value(command_data);
 #endif
-<<<<<<< HEAD
 #if defined(VIALRGB_ENABLE)
             vialrgb_get_value(data, length);
-=======
+#endif
 #if defined(VIA_QMK_RGB_MATRIX_ENABLE)
             via_qmk_rgb_matrix_get_value(command_data);
->>>>>>> 9056775e20 (Add hacky via support for RGB Matrix (#16086))
 #endif
 #if defined(VIA_CUSTOM_LIGHTING_ENABLE)
             raw_hid_receive_kb(data, length);
 #endif
-<<<<<<< HEAD
-#if !defined(VIA_QMK_BACKLIGHT_ENABLE) && !defined(VIA_QMK_RGBLIGHT_ENABLE) && !defined(VIALRGB_ENABLE) && !defined(VIA_CUSTOM_LIGHTING_ENABLE)
-=======
-#if !defined(VIA_QMK_BACKLIGHT_ENABLE) && !defined(VIA_QMK_RGBLIGHT_ENABLE) && !defined(VIA_CUSTOM_LIGHTING_ENABLE) && !defined(VIA_QMK_RGB_MATRIX_ENABLE)
->>>>>>> 9056775e20 (Add hacky via support for RGB Matrix (#16086))
+#if !defined(VIA_QMK_BACKLIGHT_ENABLE) && !defined(VIA_QMK_RGBLIGHT_ENABLE) && !defined(VIA_CUSTOM_LIGHTING_ENABLE) && !defined(VIA_QMK_RGB_MATRIX_ENABLE) && !defined(VIALRGB_ENABLE) 
             // Return the unhandled state
             *command_id = id_unhandled;
 #endif
