@@ -1,5 +1,6 @@
 # MCU name
 MCU = STM32F072
+<<<<<<< HEAD
 
 # Bootloader selection
 BOOTLOADER = stm32-dfu
@@ -22,3 +23,7 @@ BACKLIGHT_DRIVER = pwm
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
+=======
+BACKLIGHT_ENABLE = yes
+BACKLIGHT_DRIVER = pwm
+>>>>>>> 467f3ae872 ([Keyboard] Add Iron165R2 PCB support (#16948))
