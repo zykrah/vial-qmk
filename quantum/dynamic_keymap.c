@@ -270,6 +270,14 @@ int dynamic_keymap_set_key_override(uint8_t index, const vial_key_override_entry
 }
 #endif
 
+// VIAL_ENCODER_DEFAULT is deprecated in favour of ENCODER_MAP_ENABLE.
+// Remove this later
+#if defined(VIAL_ENCODERS_ENABLE) && defined(VIAL_ENCODER_DEFAULT)
+static const uint16_t PROGMEM vial_encoder_default[] = VIAL_ENCODER_DEFAULT;
+_Static_assert(sizeof(vial_encoder_default)/sizeof(*vial_encoder_default) == 2 * DYNAMIC_KEYMAP_LAYER_COUNT * NUMBER_OF_ENCODERS,
+    "There should be DYNAMIC_KEYMAP_LAYER_COUNT * NUMBER_OF_ENCODERS * 2 entries in the VIAL_ENCODER_DEFAULT array.");
+#endif
+
 void dynamic_keymap_reset(void) {
 #ifdef VIAL_ENABLE
     /* temporarily unlock the keyboard so we can set hardcoded QK_BOOT keycode */
@@ -287,17 +295,21 @@ void dynamic_keymap_reset(void) {
             }
         }
 
+        // Set dynamic keymap if encoder map or vial encoders is enabled.
 #if defined(ENCODER_MAP_ENABLE) || defined(VIAL_ENCODERS_ENABLE)
         for (int encoder = 0; encoder < NUM_ENCODERS; encoder++) {
 #ifdef ENCODER_MAP_ENABLE
             dynamic_keymap_set_encoder(layer, encoder, true, pgm_read_word(&encoder_map[layer][encoder][0]));
             dynamic_keymap_set_encoder(layer, encoder, false, pgm_read_word(&encoder_map[layer][encoder][1]));
-#elif defined(VIAL_ENCODERS_ENABLE)
+#elif defined(VIAL_ENCODER_DEFAULT) // Deprecated, remove support later
+            dynamic_keymap_set_encoder(layer, encoder, true, pgm_read_word(&vial_encoder_default[2 * (layer * NUM_ENCODERS + encoder)]));
+            dynamic_keymap_set_encoder(layer, encoder, false, pgm_read_word(&vial_encoder_default[2 * (layer * NUM_ENCODERS + encoder) + 1]));
+#else
             dynamic_keymap_set_encoder(layer, encoder, true, KC_TRNS);
             dynamic_keymap_set_encoder(layer, encoder, false, KC_TRNS);
 #endif
         }
-#endif
+#endif // ENCODER_MAP_ENABLE or VIAL_ENCODERS_ENABLE
     }
 
 #ifdef QMK_SETTINGS
