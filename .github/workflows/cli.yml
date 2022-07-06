@@ -1,4 +1,4 @@
-name: Unit Tests
+name: CLI CI
 
 on:
   push:
@@ -7,14 +7,9 @@ on:
     - develop
   pull_request:
     paths:
-    - 'builddefs/**'
-    - 'quantum/**'
-    - 'platforms/**'
-    - 'tmk_core/**'
-    - 'tests/**'
-    - '*.mk'
-    - 'Makefile'
-    - '.github/workflows/unit_test.yml'
+    - 'lib/python/**'
+    - 'requirements.txt'
+    - '.github/workflows/cli.yml'
 
 jobs:
   test:
@@ -29,4 +24,4 @@ jobs:
     - name: Install dependencies
       run: pip3 install -r requirements-dev.txt
     - name: Run tests
-      run: make test:all
+      run: qmk pytest
