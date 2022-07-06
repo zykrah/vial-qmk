@@ -26,6 +26,12 @@
 #include "vial.h"
 #endif
 
+#ifdef ENCODER_ENABLE
+#    include "encoder.h"
+#else
+#    define NUM_ENCODERS 0
+#endif
+
 #ifndef DYNAMIC_KEYMAP_MACRO_COUNT
 #    define DYNAMIC_KEYMAP_MACRO_COUNT 16
 #endif
