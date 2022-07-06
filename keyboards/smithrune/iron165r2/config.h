@@ -22,15 +22,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* USB Device descriptor parameter */
 #define VENDOR_ID 0x8384 // SR for Smith and RUne
 #define PRODUCT_ID 0x1652 // 165 rev 2
-<<<<<<< HEAD
 #define DEVICE_VER 0x0001
 #define MANUFACTURER SmithRune
 #define PRODUCT Iron165R2
-=======
-#define DEVICE_VER 0x0001 
-#define MANUFACTURER SmithRune
-#define PRODUCT Iron156R2
->>>>>>> 467f3ae872 ([Keyboard] Add Iron165R2 PCB support (#16948))
 
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15

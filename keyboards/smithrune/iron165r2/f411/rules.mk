@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 # MCU name
 MCU = STM32F411
+BOARD = GENERIC_STM32_F411XE
 
 # Bootloader selection
 BOOTLOADER = stm32-dfu
@@ -18,16 +18,10 @@ RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 LTO_ENABLE = no
 ENCODER_ENABLE = no
-=======
-MCU = STM32F411
->>>>>>> 467f3ae872 ([Keyboard] Add Iron165R2 PCB support (#16948))
 EEPROM_DRIVER = i2c
 BACKLIGHT_ENABLE = yes
 BACKLIGHT_DRIVER = pwm
 WS2812_DRIVER = pwm
-<<<<<<< HEAD
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
-=======
->>>>>>> 467f3ae872 ([Keyboard] Add Iron165R2 PCB support (#16948))
