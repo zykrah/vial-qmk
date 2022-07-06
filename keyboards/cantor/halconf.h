@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Copyright 2020 QMK
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,3 +29,13 @@
 //#define SERIAL_USB_BUFFERS_SIZE 256
 
 #include_next <halconf.h>
+=======
+// Copyright 2022 Diego Palacios (@diepala)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#pragma once
+
+#define HAL_USE_SERIAL TRUE
+
+#include_next <halconf.h>
+>>>>>>> e6071b891a (Added Cantor keyboard (#16552))

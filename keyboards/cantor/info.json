@@ -3,9 +3,14 @@
     "keyboard_name": "cantor",
     "maintainer": "diepala",
     "bootloader": "stm32-dfu",
+<<<<<<< HEAD
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic_lite": true,
+=======
+    "features": {
+        "bootmagic": true,
+>>>>>>> e6071b891a (Added Cantor keyboard (#16552))
         "command": false,
         "console": false,
         "extrakey": true,
@@ -19,6 +24,10 @@
         "pid": "0x0000",
         "vid": "0xFEED"
     },
+<<<<<<< HEAD
+=======
+    "community_layouts": ["split_3x6_3"],
+>>>>>>> e6071b891a (Added Cantor keyboard (#16552))
     "layouts": {
         "LAYOUT_split_3x6_3": {
             "layout": [

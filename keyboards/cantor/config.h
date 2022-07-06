@@ -5,6 +5,7 @@
 
 #include "config_common.h"
 
+<<<<<<< HEAD
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
@@ -21,10 +22,13 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
+=======
+>>>>>>> e6071b891a (Added Cantor keyboard (#16552))
 /* key matrix size */
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 6
 
+<<<<<<< HEAD
 #define DIRECT_PINS       {{B1, B10, A8, B15, B14, B13}, \
                            {B9, B8,  B5, B4,  B3,  A15}, \
                            {A3, A4,  A5, A6,  A7,  B0}, \
@@ -33,6 +37,16 @@
                            {A15, B3,  B4,  B5, B8,  B9}, \
                            {B0,  A7,  A6,  A5, A4,  A3}, \
                            {A0,  A1,  A2,  NO_PIN, NO_PIN, NO_PIN}}
+=======
+#define DIRECT_PINS {{B1, B10, A8, B15, B14, B13}, \
+                     {B9, B8, B5, B4, B3, A15}, \
+                     {A3, A4, A5, A6, A7, B0}, \
+                     {A2, A1, A0, NO_PIN, NO_PIN, NO_PIN}}
+#define DIRECT_PINS_RIGHT {{B13, B14, B15, A8, B10, B1}, \
+                           {A15, B3, B4, B5, B8, B9}, \
+                           {B0, A7, A6, A5, A4, A3}, \
+                           {A0, A1, A2, NO_PIN, NO_PIN, NO_PIN}}
+>>>>>>> e6071b891a (Added Cantor keyboard (#16552))
 
 #define SERIAL_USART_FULL_DUPLEX   // Enable full duplex operation mode.
 #define SERIAL_USART_TX_PIN B6     // USART TX pin
@@ -44,3 +58,22 @@
 /* Top right key on right half */
 #define BOOTMAGIC_LITE_ROW_RIGHT    4
 #define BOOTMAGIC_LITE_COLUMN_RIGHT 5
+<<<<<<< HEAD
+=======
+
+/*
+ * Feature disable options
+ *  These options are also useful to firmware size reduction.
+ */
+
+/* disable debug print */
+//#define NO_DEBUG
+
+/* disable print */
+//#define NO_PRINT
+
+/* disable action features */
+//#define NO_ACTION_LAYER
+//#define NO_ACTION_TAPPING
+//#define NO_ACTION_ONESHOT
+>>>>>>> e6071b891a (Added Cantor keyboard (#16552))
