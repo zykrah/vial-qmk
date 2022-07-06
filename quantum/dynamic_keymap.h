@@ -30,10 +30,10 @@ uint8_t  dynamic_keymap_get_layer_count(void);
 void *   dynamic_keymap_key_to_eeprom_address(uint8_t layer, uint8_t row, uint8_t column);
 uint16_t dynamic_keymap_get_keycode(uint8_t layer, uint8_t row, uint8_t column);
 void     dynamic_keymap_set_keycode(uint8_t layer, uint8_t row, uint8_t column, uint16_t keycode);
-#ifdef VIAL_ENCODERS_ENABLE
-uint16_t dynamic_keymap_get_encoder(uint8_t layer, uint8_t idx, uint8_t dir);
-void dynamic_keymap_set_encoder(uint8_t layer, uint8_t idx, uint8_t dir, uint16_t keycode);
-#endif
+#ifdef ENCODER_MAP_ENABLE
+uint16_t dynamic_keymap_get_encoder(uint8_t layer, uint8_t encoder_id, bool clockwise);
+void     dynamic_keymap_set_encoder(uint8_t layer, uint8_t encoder_id, bool clockwise, uint16_t keycode);
+#endif // ENCODER_MAP_ENABLE
 #ifdef QMK_SETTINGS
 uint8_t dynamic_keymap_get_qmk_settings(uint16_t offset);
 void dynamic_keymap_set_qmk_settings(uint16_t offset, uint8_t value);
@@ -50,7 +50,7 @@ int dynamic_keymap_set_combo(uint8_t index, const vial_combo_entry_t *entry);
 int dynamic_keymap_get_key_override(uint8_t index, vial_key_override_entry_t *entry);
 int dynamic_keymap_set_key_override(uint8_t index, const vial_key_override_entry_t *entry);
 #endif
-void     dynamic_keymap_reset(void);
+void dynamic_keymap_reset(void);
 // These get/set the keycodes as stored in the EEPROM buffer
 // Data is big-endian 16-bit values (the keycodes)
 // Order is by layer/row/column
