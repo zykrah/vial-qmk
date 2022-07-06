@@ -49,5 +49,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 #define DEBOUNCE 3
+<<<<<<< HEAD
 
 #define FEE_PAGE_COUNT 2
+=======
+>>>>>>> a3e057e779 (Adding akira (#16982))
