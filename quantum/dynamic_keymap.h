@@ -30,7 +30,7 @@ uint8_t  dynamic_keymap_get_layer_count(void);
 void *   dynamic_keymap_key_to_eeprom_address(uint8_t layer, uint8_t row, uint8_t column);
 uint16_t dynamic_keymap_get_keycode(uint8_t layer, uint8_t row, uint8_t column);
 void     dynamic_keymap_set_keycode(uint8_t layer, uint8_t row, uint8_t column, uint16_t keycode);
-#ifdef ENCODER_MAP_ENABLE
+#if defined(ENCODER_MAP_ENABLE) || defined(VIAL_ENCODERS_ENABLE)
 uint16_t dynamic_keymap_get_encoder(uint8_t layer, uint8_t encoder_id, bool clockwise);
 void     dynamic_keymap_set_encoder(uint8_t layer, uint8_t encoder_id, bool clockwise, uint16_t keycode);
 #endif // ENCODER_MAP_ENABLE

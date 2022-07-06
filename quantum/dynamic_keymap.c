@@ -163,7 +163,7 @@ void dynamic_keymap_set_keycode(uint8_t layer, uint8_t row, uint8_t column, uint
     eeprom_update_byte(address + 1, (uint8_t)(keycode & 0xFF));
 }
 
-#ifdef ENCODER_MAP_ENABLE
+#if defined(ENCODER_MAP_ENABLE) || defined(VIAL_ENCODERS_ENABLE)
 void *dynamic_keymap_encoder_to_eeprom_address(uint8_t layer, uint8_t encoder_id) {
     return ((void *)DYNAMIC_KEYMAP_ENCODER_EEPROM_ADDR) + (layer * NUM_ENCODERS * 2 * 2) + (encoder_id * 2 * 2);
 }
@@ -268,12 +268,6 @@ int dynamic_keymap_set_key_override(uint8_t index, const vial_key_override_entry
 
     return 0;
 }
-#endif
-
-#if defined(VIAL_ENCODERS_ENABLE) && defined(VIAL_ENCODER_DEFAULT)
-static const uint16_t PROGMEM vial_encoder_default[] = VIAL_ENCODER_DEFAULT;
-_Static_assert(sizeof(vial_encoder_default)/sizeof(*vial_encoder_default) == 2 * DYNAMIC_KEYMAP_LAYER_COUNT * NUMBER_OF_ENCODERS,
-    "There should be DYNAMIC_KEYMAP_LAYER_COUNT * NUMBER_OF_ENCODERS * 2 entries in the VIAL_ENCODER_DEFAULT array.");
 #endif
 
 void dynamic_keymap_reset(void) {
@@ -426,7 +420,7 @@ uint16_t keymap_key_to_keycode(uint8_t layer, keypos_t key) {
     if (layer < DYNAMIC_KEYMAP_LAYER_COUNT && key.row < MATRIX_ROWS && key.col < MATRIX_COLS) {
         return dynamic_keymap_get_keycode(layer, key.row, key.col);
     }
-#ifdef ENCODER_MAP_ENABLE
+#if defined(ENCODER_MAP_ENABLE) || defined(VIAL_ENCODERS_ENABLE)
     else if (layer < DYNAMIC_KEYMAP_LAYER_COUNT && key.row == KEYLOC_ENCODER_CW && key.col < NUM_ENCODERS) {
         return dynamic_keymap_get_encoder(layer, key.col, true);
     } else if (layer < DYNAMIC_KEYMAP_LAYER_COUNT && key.row == KEYLOC_ENCODER_CCW && key.col < NUM_ENCODERS) {
