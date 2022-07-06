@@ -1,16 +1,28 @@
 # p01_ultra
 
+<<<<<<< HEAD
 ![p01_ultra](https://imgur.com/a/LsU7HgT)
+=======
+![p01_ultra](https://i.imgur.com/gWOyKT7h.jpeg)
+>>>>>>> f330ef12b6 (Add wavtype/p01_ultra (#16513))
 
 designed by wavtype for protozoa studio.
 
 Make example for this keyboard (after setting up your build environment):
 
+<<<<<<< HEAD
     make p01_ultra:default
 
 Flashing example for this keyboard:
 
     make p01_ultra:default:flash
+=======
+    make wavtype/p01_ultra:default
+
+Flashing example for this keyboard:
+
+    make wavtype/p01_ultra:default:flash
+>>>>>>> f330ef12b6 (Add wavtype/p01_ultra (#16513))
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
