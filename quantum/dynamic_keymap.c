@@ -130,6 +130,10 @@ _Static_assert(DYNAMIC_KEYMAP_EEPROM_MAX_ADDR >= DYNAMIC_KEYMAP_MACRO_EEPROM_ADD
 #    define DYNAMIC_KEYMAP_MACRO_EEPROM_SIZE (DYNAMIC_KEYMAP_EEPROM_MAX_ADDR - DYNAMIC_KEYMAP_MACRO_EEPROM_ADDR + 1)
 #endif
 
+#ifndef DYNAMIC_KEYMAP_MACRO_DELAY
+#    define DYNAMIC_KEYMAP_MACRO_DELAY TAP_CODE_DELAY
+#endif
+
 uint8_t dynamic_keymap_get_layer_count(void) {
     return DYNAMIC_KEYMAP_LAYER_COUNT;
 }
@@ -520,7 +524,7 @@ void dynamic_keymap_macro_send(uint8_t id) {
                 // For tap, down, up, just stuff it into the array and send_string it
                 data[2] = eeprom_read_byte(p++);
                 if (data[2] != 0)
-                    send_string(data);
+                    send_string_with_delay(data, DYNAMIC_KEYMAP_MACRO_DELAY);
             } else if (data[1] == VIAL_MACRO_EXT_TAP || data[1] == VIAL_MACRO_EXT_DOWN || data[1] == VIAL_MACRO_EXT_UP) {
                 data[2] = eeprom_read_byte(p++);
                 if (data[2] != 0) {
@@ -554,7 +558,7 @@ void dynamic_keymap_macro_send(uint8_t id) {
             }
         } else {
             // If the char wasn't magic, just send it
-            send_string(data);
+            send_string_with_delay(data, DYNAMIC_KEYMAP_MACRO_DELAY);
         }
     }
 }
