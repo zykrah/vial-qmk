@@ -190,6 +190,7 @@ void qmk_settings_reset(void) {
     /* must call clear_keyboard for the NKRO setting to not cause stuck keys */
     clear_keyboard();
     keymap_config.raw = 0;
+    keymap_config.oneshot_enable = 1;
     eeconfig_update_keymap(keymap_config.raw);
 
     /* to trigger all callbacks */
@@ -255,9 +256,11 @@ int qmk_settings_set(uint16_t qsid, const void *setting, size_t maxsz) {
 }
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+#ifdef TAP_DANCE_ENABLE
     vial_tap_dance_entry_t td;
     if (dynamic_keymap_get_tap_dance(TD_INDEX(keycode), &td) == 0)
         return td.custom_tapping_term;
+#endif
 
     return QS.tapping_term;
 }
