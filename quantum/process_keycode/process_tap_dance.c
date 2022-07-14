@@ -98,7 +98,7 @@ static inline void process_tap_dance_action_on_reset(qk_tap_dance_action_t *acti
     action->state = (const qk_tap_dance_state_t){0};
 }
 
-static inline void process_tap_dance_action_on_dance_finished(qk_tap_dance_action_t *action) {
+void process_tap_dance_action_on_dance_finished(qk_tap_dance_action_t *action) {
     if (!action->state.finished) {
         action->state.finished = true;
         add_weak_mods(action->state.weak_mods);
