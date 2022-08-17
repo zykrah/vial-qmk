@@ -1,13 +1,13 @@
 # angler2
 A customizable soldering 80% keyboard.
 
-* Keyboard Maintainer: [Eason](https://github.com/EasonQian1) [Vertex](https://github.com/Vertex-kb)
+* Keyboard Maintainer: [Vertex](https://github.com/Vertex-kb)
 * Hardware Supported: AngleR2
-* Hardware Availability: [Eason](https://github.com/EasonQian1) [Vertex](https://github.com/Vertex-kb)
+* Hardware Availability: [Vertex](https://github.com/Vertex-kb)
 
 Make example for this keyboard (after setting up your build environment):
 
-    make vertex/angler2:default
+    make Vertex/AngleR2:default
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
